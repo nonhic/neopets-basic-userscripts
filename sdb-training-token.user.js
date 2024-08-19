@@ -48,7 +48,7 @@ function markItems(page) {
         const itemName = (page.itemNameMatch ? item.text().match(page.itemNameMatch)[1] : item.text()).trim()
         const number = numberStorage.get(itemName);
 
-		if(number) {
+	if(number) {
             const numberHTML = `<p style="${style}" class="item_no">Count: ${number}</p>`
             if(page.insert) {
                 page.insert(item, numberHTML);
@@ -62,6 +62,8 @@ function markItems(page) {
         }
     });
 }
+
+// pages
 const pages = [
     {
         name: 'sdb',
@@ -83,10 +85,10 @@ const pages = [
 const loc = window.location.href;
 
 // store numbers for each token type
-
 if(loc.match(/training.phtml/) || loc.match(/academy.phtml/)) {
     numberStorage.reset(); //delete storage on training page refresh
     let itemName, itemNumber = 0;
+    
     // collect codestone numbers
     if ($("form[action='process_training.phtml']").length ) {
         let tempName = $('img[src*="/items/"]').parent().find('b').map((i, v) => v.firstChild).text().split(/(Codestone)/);
@@ -105,6 +107,7 @@ if(loc.match(/training.phtml/) || loc.match(/academy.phtml/)) {
             }
         }
     }
+
     // collect dubloon number (I don't think you ever get more than one per session?)
     else if ($("form[action='process_academy.phtml']").length) {
         let tempName = $('img[src*="/items/"]').parent().parent().find('b').text().split(/(Dubloon\ Coin)/);
@@ -125,8 +128,7 @@ if(loc.match(/training.phtml/) || loc.match(/academy.phtml/)) {
     }
 }
 
-
-// Display count
+// display count
 if(localStorage.hasOwnProperty(numberStorage.key)) {
     const page = pages.find((i) => {
         return loc.match(i.pageMatcher)
