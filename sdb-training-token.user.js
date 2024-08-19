@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         SDB Training Tokens
-// @version      08.18.24
+// @version      20240818
 // @description  Remember what tokens you need to pay for training classes when visiting SDB
 // @author       nonhic
 // @match        *://*.neopets.com/safetydeposit.phtml*
