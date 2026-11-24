@@ -35,7 +35,7 @@
 				dropdownPetName.querySelector(`option[value='${tempData[0]}']`).selected = true;
 				dispatch(dropdownPetName);
 				let dropdownCourseType = document.querySelector("select[name='course_type']");
-				dropdownCourseType.querySelector(`option[value='${tempData[1]}'`).selected = true;
+				dropdownCourseType.querySelector(`option[value='${tempData[1]}']`).selected = true;
 				dispatch(dropdownCourseType);
 			}
 		})();
