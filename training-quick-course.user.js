@@ -4,6 +4,7 @@
 // @version      2026-11-24
 // @description  Bypass the homepage and go straight to training, add buttons for quickly activating a course (*sets up course page for Ninja school)
 // @author       nonhic
+// @license		 The Unlicense
 // @match        *://*.neopets.com/island/training.phtml*
 // @match        *://*.neopets.com/pirates/academy.phtml*
 // @match        *://*.neopets.com/island/fight_training.phtml*
